@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src = "script.js"></script>
+</head>
+<body ng-app = "myApp" ng-controller = "myController">
+    <div ng-hide = "change">
+        <h1>Them hoc sinh</h1>
+        <input type="text" placeholder = "Ho ten" ng-model = "hoTen"><br>
+        <input style = "width : 165px" type="date" ng-model = "tuoi"><br>
+        <select ng-model = "lop">
+            <optgroup ng-repeat = "khoi in khoi" label = "{{khoi.name}}">
+                <option ng-repeat = "lop in khoi.lop">{{lop.name}}</option>
+            </optgroup>
+        </select>
+        <button ng-click = "saveAdd(hoTen, tuoi, lop)">Luu</button>
+    </div>
+    <div ng-show = "change" ng-src = "'main.html'">
+    </div>
+</body>
+</html>
